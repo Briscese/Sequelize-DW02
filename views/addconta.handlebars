@@ -1,0 +1,21 @@
+<h1>Criando a Conta</h1>
+<form action="/conta/criar" method="POST" class="form">
+        <div>
+        <label for="name">Nome: </label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+        </div>
+    
+        <div>
+        <label for="tipoconta" name="tipoconta" id="tipoconta">Tipo de Conta:</label>
+        <select id="tipoconta" for="tipoconta" name="tipoconta" type="text">
+            <option selected disabled required value="">Escolha</option>
+            <option  id="tipoconta" type="text" name="tipoconta" for="tipoconta" value="Corrente">Corrente</option>
+            <option  id="tipoconta" type="text" name="tipoconta" for="tipoconta" value="Poupanca">Poupança</option>
+        </select>
+        </div>
+        <div>
+        <label for="idade" id="idade">Idade: </label>
+        <input type="number" name="idade" id="idade"  placeholder="Digite sua idade" required>
+        </div>
+<input type="submit" value="Criar Conta">
+</form>

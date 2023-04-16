@@ -1,0 +1,44 @@
+<h1>Editando dados da Conta de:  {{conta.name}} {{conta.Saldo}}</h1>
+<form action="/conta/atualizar" method="POST" class="form">
+        <input type="hidden" name="id_conta" id="id_conta" value="{{conta.id_conta}}">
+        <div>
+        <label for="name">Nome: </label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome" value="{{conta.name}}" required>
+        </div>
+    
+        <div>
+        <label for="tipoconta" name="tipoconta" id="tipoconta">Tipo de Conta:</label>
+        <select id="tipoconta" for="tipoconta" name="tipoconta" type="text">
+            <option selected required value="{{conta.tipoconta}}">Escolha</option>
+            <option  id="tipoconta" type="text" name="tipoconta" for="tipoconta" value="Corrente">Corrente</option>
+            <option  id="tipoconta" type="text" name="tipoconta" for="tipoconta" value="Poupanca">Poupança</option>
+        </select>
+        </div>
+        <div>
+        <label for="idade" id="idade">Idade: </label>
+        <input type="number" name="idade" id="idade"  placeholder="Digite sua idade" value="{{conta.idade}}" required>
+        </div>
+<input type="submit" value="Atualizar">
+</form>
+
+<div>
+    <h2>Adicionar Dinheiro ao Saldo:</h2>
+    <form action="/saldo/adicionar" method="POST">
+    <input type="hidden" name="ContumIdConta" value="{{conta.id_conta}}">
+    
+    <div>
+        <label for="saldo">Depositar Valor: </label>
+        <input type="number" name="saldo" placeholder="Entre com o valor a adiconar">
+    </div>
+    <input type="submit" value="Adiconar $$">
+
+    </form>
+
+</div>
+
+<div>
+    <h2>Valor Adicionados:</h2>
+    {{#each conta.Saldos}}
+    <p> #{{this.id}} - {{this.saldo}} - data de desposito: {{this.createdAt}} </p>
+    {{/each}}
+</div>

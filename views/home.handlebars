@@ -1,0 +1,16 @@
+<h1>Bem vindo ao Banco Briscese</h1>
+<a href="/conta/criar">Criar Conta</a>
+
+<h2>Contas Já Criadas</h2>
+<div class="container">
+    {{#each conta}}
+    <div>
+        <p><b>Numero Conta:</b> {{this.id_conta}} // <b>Titular:</b>{{this.name}} // <b>Tipo de Conta:</b>{{this.tipoconta}} // Idade Titular:{{this.idade}} // <a href="/conta/{{this.id_conta}}">Ver Detalhes</a>
+        <form action="/conta/deletar/{{this.id_conta}}" method="POST"><input type="submit" value="Excluir Conta"></form>
+        <form action="/conta/atualizar/{{this.id_conta}}" method="GET"><input type="submit" value="Editar"></form>
+        
+        </p>
+    </div>
+
+    {{/each}}
+</div>
